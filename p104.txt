@@ -1,0 +1,26 @@
+import csv
+with open ('SOCR-HeightWeight.csv',newline='') as f:
+    reader = csv.reader(f)
+    file_data=list(reader)
+file_data.pop(0)
+total_weight=0
+total_entries=len(file_data)
+sorted_data=[]
+for person_data in file_data:
+    total_weight+= float(person_data[2])
+    sorted_data.append(float(person_data[2]))
+sorted_data.sort()
+print (total_weight)
+print (total_entries)
+
+mean=total_weight/total_entries
+
+print(mean)
+
+print(total_weight/total_entries)
+
+print(sorted_data)
+
+middle_index= int(total_entries/2)
+
+print(sorted_data[middle_index])
